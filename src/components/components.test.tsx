@@ -12,3 +12,7 @@ import './RadioButton/RadioButton.tests';
 import './Img/Img.tests';
 import './HeroImage/HeroImage.tests';
 import './Card/Card.tests';
+import './ProjectCard/ProjectCard.tests';
+import './SkillGroup/SkillGroup.tests';
+import './ResourceCard/ResourceCard.tests';
+import './SetupCard/SetupCard.tests';
