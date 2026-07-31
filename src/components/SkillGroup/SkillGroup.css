@@ -1,0 +1,39 @@
+.skill-group {
+  min-height: 100%;
+  padding: 1.75rem;
+  border: 1px solid #dfe3e8;
+  border-radius: 0.9rem;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1.75rem rgba(23, 32, 51, 0.05);
+}
+
+.skill-group h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  letter-spacing: -0.025em;
+}
+
+.skill-group p {
+  margin: 0.85rem 0 0;
+  color: #596273;
+  line-height: 1.7;
+}
+
+.skill-group__list {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  list-style: none;
+}
+
+.skill-group__list li {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #d9d5ff;
+  border-radius: 999px;
+  background: #f3f1ff;
+  color: #4033aa;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
