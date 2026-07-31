@@ -1,5 +1,5 @@
 {
-  "name": "rosales_juan_jose_ui_garden",
+  "name": "rosales_juan_jose_coding_assignment14",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-router": "^7.18.2",
     "react-scripts": "5.0.1",
     "styled-components": "^6.4.2",
     "typescript": "^4.9.5",
