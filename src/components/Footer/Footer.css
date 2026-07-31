@@ -1,0 +1,25 @@
+.site-footer {
+  border-top: 1px solid #dfe3e8;
+  background: #ffffff;
+}
+
+.site-footer__content {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #667085;
+  font-size: 0.9rem;
+}
+
+.site-footer__content p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .site-footer__content {
+    flex-direction: column;
+  }
+}

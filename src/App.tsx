@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router';
 import './App.css';
+import PortfolioLayout from './layouts/PortfolioLayout';
+import DeveloperSetupPage from './pages/DeveloperSetupPage';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
+import ResourcesPage from './pages/ResourcesPage';
+import SkillsPage from './pages/SkillsPage';
+import WorkPage from './pages/WorkPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route element={<PortfolioLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="work" element={<WorkPage />} />
+        <Route path="skills" element={<SkillsPage />} />
+        <Route path="resources" element={<ResourcesPage />} />
+        <Route path="developer-setup" element={<DeveloperSetupPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 
