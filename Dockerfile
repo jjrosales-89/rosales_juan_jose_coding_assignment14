@@ -1,26 +1,26 @@
-FROM node:20-alpine AS builder
+FROM node:20-alpine AS build
 
-WORKDIR /rosales_juan_jose_ui_garden_build_checks
+WORKDIR /rosales_juan_jose_final_site
 
 COPY package*.json ./
 
-RUN HUSKY=0 npm ci
+RUN npm ci
 
 COPY . .
 
-RUN npm run build-storybook
+RUN npm run build
 
 
-FROM node:20-alpine
+FROM nginx:1.27-alpine
 
-WORKDIR /rosales_juan_jose_ui_garden_build_checks
+WORKDIR /rosales_juan_jose_final_site
 
-RUN npm install -g http-server
+RUN rm -rf /usr/share/nginx/html/*
 
-COPY --from=builder \
-  /rosales_juan_jose_ui_garden_build_checks/storybook-static \
-  ./storybook-static
+COPY --from=build /rosales_juan_jose_final_site/build /usr/share/nginx/html
 
-EXPOSE 8018
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-CMD ["http-server", "storybook-static", "-p", "8018", "-a", "0.0.0.0"]
+EXPOSE 5575
+
+CMD ["nginx", "-g", "daemon off;"]
