@@ -1,0 +1,45 @@
+.setup-card {
+  min-height: 100%;
+  padding: 1.75rem;
+  border: 1px solid #dfe3e8;
+  border-radius: 0.9rem;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1.75rem rgba(23, 32, 51, 0.05);
+}
+
+.setup-card h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  letter-spacing: -0.025em;
+}
+
+.setup-card > p {
+  margin: 0.85rem 0 0;
+  color: #596273;
+  line-height: 1.7;
+}
+
+.setup-card__list {
+  margin: 1.4rem 0 0;
+  padding-left: 1.25rem;
+  color: #364152;
+  line-height: 1.8;
+}
+
+.setup-card__list li + li {
+  margin-top: 0.35rem;
+}
+
+.setup-card__code {
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  background: #172033;
+  color: #eef1f7;
+  overflow-x: auto;
+}
+
+.setup-card__code code {
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
