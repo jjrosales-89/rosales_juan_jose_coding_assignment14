@@ -1,60 +1,85 @@
-# Coding Assignment 13 - UI Component Library Build Checks
+# Coding Assignment 14 — Portfolio Website
 
-## Project Description
+A multi-page portfolio website built with Create React App, React, TypeScript, and the reusable component library developed in previous WEBD-3012 assignments.
 
-This project extends the Assignment 12 React Storybook UI Component Library by adding automated code-quality checks to the development and build process.
+The portfolio highlights selected coursework, technical skills, development resources, and my developer setup.
 
-The project uses Prettier, ESLint, Jest, Husky, GitHub Actions, and Docker. Before Git creates a commit, Husky automatically runs formatting checks, linting, and all tests. GitHub Actions runs the same checks when code is pushed to GitHub or submitted through a pull request.
+## Portfolio Sections
 
-The production Storybook application runs in Docker at:
+- Basic Information
+- Work
+- Skills
+- Resources
+- Developer Setup
 
-```text
-http://localhost:8018
-```
+## Main Features
 
-or:
+- Multi-page navigation with React Router
+- Responsive layouts for desktop and mobile screens
+- Reusable portfolio components
+- Project screenshots, descriptions, links, and technology lists
+- Storybook component documentation
+- Automated unit tests
+- ESLint and Prettier code-quality checks
+- Husky pre-commit quality checks
+- GitHub Actions CI pipeline
+- Dockerized React production build
+- Nginx routing support for direct page refreshes
 
-```text
-http://127.0.0.1:8018
-```
-
-## Requirements
-
-- Docker Desktop
-- Node.js 20
-- npm
-- Git
-- Terminal or PowerShell
-- Web browser
-
-## Technologies Used
+## Technologies
 
 - React
 - TypeScript
 - Create React App
+- React Router
 - Storybook
-- Styled Components
 - Jest
 - React Testing Library
-- Prettier
 - ESLint
+- Prettier
 - Husky
+- Git and GitHub
 - GitHub Actions
 - Docker
+- Nginx
+
+## Requirements
+
+Install the following before running the project:
+
+- Node.js 20 or later
+- npm
+- Git
+- Docker Desktop
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/jjrosales-89/rosales_juan_jose_coding_assignment14.git
+cd rosales_juan_jose_coding_assignment14
+```
 
 ## Install Dependencies
-
-From the project directory, run:
 
 ```bash
 npm ci
 ```
 
-The `prepare` script installs the Husky Git hooks automatically.
+`npm ci` installs the exact dependency versions recorded in `package-lock.json`.
 
-## Run Storybook Locally
+## Run the Development Site
 
-Run the Storybook development server:
+```bash
+npm start
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+## Run Storybook
 
 ```bash
 npm run storybook
@@ -66,191 +91,212 @@ Open:
 http://localhost:6006
 ```
 
-## Code-Quality Commands
+Storybook displays and documents the reusable component library and the portfolio-specific components.
 
-### Check Prettier Formatting
+## Run Code-Quality Checks
+
+Run Prettier, ESLint, and all unit tests together:
+
+```bash
+npm run quality
+```
+
+Run individual checks:
 
 ```bash
 npm run format:check
+npm run lint
+npm run test:ci
 ```
 
-### Format Project Files
+Automatically format supported files:
 
 ```bash
 npm run format
 ```
 
-### Run ESLint
+## Create the React Production Build
 
 ```bash
-npm run lint
+npm run build
 ```
 
-### Run Tests Without Watch Mode
-
-```bash
-npm run test:ci
-```
-
-### Run All Quality Checks
-
-```bash
-npm run quality
-```
-
-The quality command runs the following checks in sequence:
-
-1. Prettier
-2. ESLint
-3. Jest tests
-
-Expected test result:
+The optimized Create React App files are generated in:
 
 ```text
-Test Suites: 2 passed, 2 total
-Tests:       27 passed, 27 total
+build/
 ```
 
-## Husky Pre-commit Hook
-
-The project contains a pre-commit hook at:
-
-```text
-.husky/pre-commit
-```
-
-Before Git creates a commit, Husky automatically runs:
-
-```bash
-npm run quality
-```
-
-If Prettier, ESLint, or any test fails, Git blocks the commit until the problem is corrected.
-
-## GitHub Actions
-
-The GitHub Actions workflow is located at:
-
-```text
-.github/workflows/code-quality.yml
-```
-
-The workflow runs automatically for pushes and pull requests. It performs the following steps:
-
-1. Checks out the repository
-2. Sets up Node.js
-3. Installs dependencies with `npm ci`
-4. Checks Prettier formatting
-5. Runs ESLint
-6. Runs all tests
-7. Creates the production Storybook build
-
-If a developer bypasses the local Husky pre-commit hook, GitHub Actions still runs the checks. GitHub reports a failed workflow when any check fails.
-
-## Build the Production Storybook Locally
+## Create the Storybook Production Build
 
 ```bash
 npm run build-storybook
 ```
 
-The generated production files are placed in:
+The static Storybook files are generated in:
 
 ```text
-storybook-static
+storybook-static/
 ```
 
-## Docker Image Name
+## Docker Configuration
+
+### Required image and container name
 
 ```text
-rosales_juan_jose_coding_assignment13
+rosales_juan_jose_coding_assignment14
 ```
 
-## Docker Container Name
+### Working directory inside the container
 
 ```text
-rosales_juan_jose_coding_assignment13
+/rosales_juan_jose_final_site
 ```
 
-## Container Working Directory
+### Required port
 
 ```text
-/rosales_juan_jose_ui_garden_build_checks
+5575
 ```
 
 ## Build the Docker Image
 
-Make sure Docker Desktop is running. From the project directory, run:
+From the project root, run:
 
 ```bash
-docker build -t rosales_juan_jose_coding_assignment13 .
+docker build -t rosales_juan_jose_coding_assignment14 .
 ```
+
+The multi-stage Dockerfile:
+
+1. Installs dependencies with Node.js.
+2. Creates the optimized React production build.
+3. Copies the production files into an Nginx runtime image.
+4. Serves the portfolio on port `5575`.
 
 ## Run the Docker Container
 
 ```bash
-docker run -d -p 8018:8018 --name rosales_juan_jose_coding_assignment13 rosales_juan_jose_coding_assignment13
+docker run -d -p 5575:5575 --name rosales_juan_jose_coding_assignment14 rosales_juan_jose_coding_assignment14
 ```
-
-## Open the Docker Application
 
 Open:
 
 ```text
-http://localhost:8018
+http://localhost:5575
 ```
 
-or:
+The following routes can also be opened or refreshed directly:
 
 ```text
-http://127.0.0.1:8018
+http://localhost:5575/work
+http://localhost:5575/skills
+http://localhost:5575/resources
+http://localhost:5575/developer-setup
 ```
 
-## Check the Running Container
+## Verify the Container
+
+View the running container:
 
 ```bash
-docker ps --filter "name=rosales_juan_jose_coding_assignment13"
+docker ps
 ```
 
-## Stop the Container
+Verify the working directory:
 
 ```bash
-docker stop rosales_juan_jose_coding_assignment13
+docker exec rosales_juan_jose_coding_assignment14 pwd
 ```
 
-## Start the Existing Container
-
-```bash
-docker start rosales_juan_jose_coding_assignment13
-```
-
-## Remove the Container
-
-```bash
-docker rm -f rosales_juan_jose_coding_assignment13
-```
-
-## Rebuild After Project Changes
-
-Remove the existing container:
-
-```bash
-docker rm -f rosales_juan_jose_coding_assignment13
-```
-
-Rebuild the image:
-
-```bash
-docker build -t rosales_juan_jose_coding_assignment13 .
-```
-
-Create and run the container again:
-
-```bash
-docker run -d -p 8018:8018 --name rosales_juan_jose_coding_assignment13 rosales_juan_jose_coding_assignment13
-```
-
-## GitHub Repository
+Expected result:
 
 ```text
-https://github.com/jjrosales-89/rosales_juan_jose_ui_garden
+/rosales_juan_jose_final_site
 ```
+
+## Stop and Remove the Container
+
+```bash
+docker stop rosales_juan_jose_coding_assignment14
+docker rm rosales_juan_jose_coding_assignment14
+```
+
+Remove the image when it is no longer needed:
+
+```bash
+docker rmi rosales_juan_jose_coding_assignment14
+```
+
+## CI/CD Pipeline
+
+The GitHub Actions workflow runs automatically for pushes and pull requests.
+
+The pipeline performs these steps:
+
+1. Checks out the repository.
+2. Sets up Node.js 20.
+3. Installs dependencies with `npm ci`.
+4. checks Prettier formatting.
+5. Runs ESLint.
+6. Runs unit tests.
+7. Creates the React production build.
+8. Creates the Storybook production build.
+9. Builds the Docker production image.
+
+This process detects formatting, code-quality, testing, build, and deployment problems before changes are accepted.
+
+## Husky Pre-Commit Hook
+
+Husky runs the combined quality script before a Git commit is created:
+
+```bash
+npm run quality
+```
+
+A commit is stopped when formatting, linting, or unit tests fail.
+
+## Troubleshooting
+
+### Port `5575` is already in use
+
+Identify or stop the existing container:
+
+```bash
+docker ps
+docker rm -f rosales_juan_jose_coding_assignment14
+```
+
+Then run the required container again.
+
+### The container name is already in use
+
+```bash
+docker rm -f rosales_juan_jose_coding_assignment14
+```
+
+### Dependencies are missing or inconsistent
+
+```bash
+rm -rf node_modules
+npm ci
+```
+
+In Windows PowerShell:
+
+```powershell
+Remove-Item node_modules -Recurse -Force
+npm ci
+```
+
+## Repository
+
+```text
+https://github.com/jjrosales-89/rosales_juan_jose_coding_assignment14
+```
+
+## Author
+
+Juan José Rosales Ortega
+Full Stack Web Development
+RRC Polytech
