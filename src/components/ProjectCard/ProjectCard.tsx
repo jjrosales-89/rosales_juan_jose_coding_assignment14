@@ -8,6 +8,7 @@ export interface ProjectCardProps {
   techList: string[];
   link?: string;
   linkLabel?: string;
+  linkStatus?: string;
 }
 
 function ProjectCard({
@@ -18,6 +19,7 @@ function ProjectCard({
   techList,
   link,
   linkLabel = 'View project',
+  linkStatus = 'Repository unavailable',
 }: ProjectCardProps) {
   return (
     <article className="project-card">
@@ -50,9 +52,7 @@ function ProjectCard({
               {linkLabel}
             </a>
           ) : (
-            <span className="project-card__link-status">
-              Project link being prepared
-            </span>
+            <span className="project-card__link-status">{linkStatus}</span>
           )}
         </div>
       </div>

@@ -38,5 +38,5 @@ test('renders project information and link', () => {
 test('renders a status when no project link is provided', () => {
   render(<ProjectCard {...projectProps} />);
 
-  expect(screen.getByText('Project link being prepared')).toBeInTheDocument();
+  expect(screen.getByText('Repository unavailable')).toBeInTheDocument();
 });
