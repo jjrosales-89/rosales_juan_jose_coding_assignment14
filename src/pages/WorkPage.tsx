@@ -6,7 +6,7 @@ const projects: ProjectCardProps[] = [
     description:
       'A database-driven gaming content management system with authentication, administrative CRUD operations, search, categories, image processing, AJAX comments, and external API integration.',
     imageSrc: '/images/projects/pixel-lore.jpg',
-    imageAlt: 'Placeholder preview for the Pixel Lore CMS project',
+    imageAlt: 'Pixel Lore CMS game catalog interface',
     techList: [
       'PHP',
       'MariaDB',
@@ -17,7 +17,7 @@ const projects: ProjectCardProps[] = [
       'CSS',
       'RAWG API',
     ],
-    link: 'https://github.com/jjrosales-89/pixel-lore.git',
+    link: 'https://github.com/jjrosales-89/pixel-lore',
     linkLabel: 'View repository',
   },
   {
@@ -25,7 +25,7 @@ const projects: ProjectCardProps[] = [
     description:
       'An Ecuadorian-inspired e-commerce application with product administration, categories, tags, search, filtering, pagination, image uploads, session-based cart features, and inventory protection.',
     imageSrc: '/images/projects/quilla-alma.jpg',
-    imageAlt: 'Placeholder preview for the Quilla Alma Store project',
+    imageAlt: 'Quilla Alma Store product catalog interface',
     techList: [
       'Ruby',
       'Ruby on Rails',
@@ -43,7 +43,7 @@ const projects: ProjectCardProps[] = [
     description:
       'A Rails application that imports Winnipeg open data and allows users to explore parks through search, filters, pagination, associated amenities and activities, reviews, and interactive maps.',
     imageSrc: '/images/projects/winnipeg-parks.jpg',
-    imageAlt: 'Placeholder preview for the Winnipeg Parks Explorer project',
+    imageAlt: 'Winnipeg Parks Explorer search results and interactive map',
     techList: [
       'Ruby on Rails',
       'ActiveRecord',
@@ -60,7 +60,7 @@ const projects: ProjectCardProps[] = [
     description:
       'A reusable React and TypeScript component library documented with Storybook and supported by automated tests, formatting, linting, Git hooks, Docker, and GitHub Actions.',
     imageSrc: '/images/projects/ui-garden.jpg',
-    imageAlt: 'Placeholder preview for the UI Garden component library',
+    imageAlt: 'UI Garden components displayed in Storybook',
     techList: [
       'React',
       'TypeScript',
@@ -78,7 +78,7 @@ const projects: ProjectCardProps[] = [
     description:
       'Python applications that provide image conversion and QR-code generation through Flask, along with an interactive Dash data visualization supported by Pandas and Jupyter.',
     imageSrc: '/images/projects/flask-dash.jpg',
-    imageAlt: 'Placeholder preview for the Flask and Dash applications',
+    imageAlt: 'Flask and Dash application interface',
     techList: ['Python', 'Flask', 'Dash', 'Pandas', 'Jupyter', 'HTML', 'CSS'],
     linkStatus: 'Repository unavailable',
   },
@@ -87,7 +87,7 @@ const projects: ProjectCardProps[] = [
     description:
       'A secure PHP blog authentication project with registration, login, logout, password hashing, sessions, prepared SQL statements, input validation, and protection against common web attacks.',
     imageSrc: '/images/projects/secure-login-blog.jpg',
-    imageAlt: 'Placeholder preview for the Secure Login Blog project',
+    imageAlt: 'Secure Login Blog authentication interface',
     techList: [
       'PHP',
       'MariaDB',
