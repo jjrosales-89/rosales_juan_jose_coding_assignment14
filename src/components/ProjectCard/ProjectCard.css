@@ -15,6 +15,19 @@
   border-bottom: 1px solid #dfe3e8;
   background: #e9ecf2;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .project-card:hover .project-card__image {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__image {
+    transition: none;
+  }
 }
 
 .project-card__content {

@@ -294,3 +294,83 @@
     grid-template-columns: 1fr;
   }
 }
+
+.profile-card-grid > article {
+  position: relative;
+  min-height: 15rem;
+  padding: 2rem;
+  border: 1px solid #dfe3e8;
+  border-top: 0.35rem solid #5b4bdb;
+  border-radius: 0.9rem;
+  background:
+    linear-gradient(145deg, rgba(91, 75, 219, 0.08), transparent 55%), #ffffff;
+  box-shadow: 0 0.75rem 2rem rgba(23, 32, 51, 0.07);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-card-grid > article:nth-child(2) {
+  border-top-color: #3478c9;
+  background:
+    linear-gradient(145deg, rgba(52, 120, 201, 0.09), transparent 55%), #ffffff;
+}
+
+.profile-card-grid > article:nth-child(3) {
+  border-top-color: #9b4d9e;
+  background:
+    linear-gradient(145deg, rgba(155, 77, 158, 0.09), transparent 55%), #ffffff;
+}
+
+.profile-card-grid > article::before {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  color: rgba(23, 32, 51, 0.08);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.profile-card-grid > article:nth-child(1)::before {
+  content: '01';
+}
+
+.profile-card-grid > article:nth-child(2)::before {
+  content: '02';
+}
+
+.profile-card-grid > article:nth-child(3)::before {
+  content: '03';
+}
+
+.profile-card-grid > article h2,
+.profile-card-grid > article h3 {
+  position: relative;
+  max-width: 75%;
+  margin-top: 0;
+  color: #172033;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+}
+
+.profile-card-grid > article p {
+  position: relative;
+  margin-bottom: 0;
+  color: #596273;
+  line-height: 1.7;
+}
+
+@media (hover: hover) {
+  .profile-card-grid > article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1.1rem 2.75rem rgba(23, 32, 51, 0.13);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-card-grid > article {
+    transition: none;
+  }
+}
