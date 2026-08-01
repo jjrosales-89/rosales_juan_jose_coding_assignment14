@@ -1,13 +1,11 @@
 import { ProjectCard, ProjectCardProps } from '../components/ProjectCard';
 
-const projectImage = '/images/projects/project-placeholder.svg';
-
 const projects: ProjectCardProps[] = [
   {
     title: 'Pixel Lore CMS',
     description:
       'A database-driven gaming content management system with authentication, administrative CRUD operations, search, categories, image processing, AJAX comments, and external API integration.',
-    imageSrc: projectImage,
+    imageSrc: '/images/projects/pixel-lore.jpg',
     imageAlt: 'Placeholder preview for the Pixel Lore CMS project',
     techList: [
       'PHP',
@@ -19,12 +17,14 @@ const projects: ProjectCardProps[] = [
       'CSS',
       'RAWG API',
     ],
+    link: 'https://github.com/jjrosales-89/pixel-lore.git',
+    linkLabel: 'View repository',
   },
   {
     title: 'Quilla Alma Store',
     description:
       'An Ecuadorian-inspired e-commerce application with product administration, categories, tags, search, filtering, pagination, image uploads, session-based cart features, and inventory protection.',
-    imageSrc: projectImage,
+    imageSrc: '/images/projects/quilla-alma.jpg',
     imageAlt: 'Placeholder preview for the Quilla Alma Store project',
     techList: [
       'Ruby',
@@ -35,12 +35,14 @@ const projects: ProjectCardProps[] = [
       'Active Storage',
       'SQLite',
     ],
+    link: 'https://github.com/jjrosales-89/quilla_alma_store',
+    linkLabel: 'View repository',
   },
   {
     title: 'Winnipeg Parks Explorer',
     description:
       'A Rails application that imports Winnipeg open data and allows users to explore parks through search, filters, pagination, associated amenities and activities, reviews, and interactive maps.',
-    imageSrc: projectImage,
+    imageSrc: '/images/projects/winnipeg-parks.jpg',
     imageAlt: 'Placeholder preview for the Winnipeg Parks Explorer project',
     techList: [
       'Ruby on Rails',
@@ -50,12 +52,14 @@ const projects: ProjectCardProps[] = [
       'Open Data APIs',
       'Kaminari',
     ],
+    link: 'https://github.com/jjrosales-89/winnipeg_parks_explorer',
+    linkLabel: 'View repository',
   },
   {
     title: 'UI Garden Component Library',
     description:
       'A reusable React and TypeScript component library documented with Storybook and supported by automated tests, formatting, linting, Git hooks, Docker, and GitHub Actions.',
-    imageSrc: projectImage,
+    imageSrc: '/images/projects/ui-garden.jpg',
     imageAlt: 'Placeholder preview for the UI Garden component library',
     techList: [
       'React',
@@ -73,15 +77,16 @@ const projects: ProjectCardProps[] = [
     title: 'Flask and Dash Applications',
     description:
       'Python applications that provide image conversion and QR-code generation through Flask, along with an interactive Dash data visualization supported by Pandas and Jupyter.',
-    imageSrc: projectImage,
+    imageSrc: '/images/projects/flask-dash.jpg',
     imageAlt: 'Placeholder preview for the Flask and Dash applications',
     techList: ['Python', 'Flask', 'Dash', 'Pandas', 'Jupyter', 'HTML', 'CSS'],
+    linkStatus: 'Repository unavailable',
   },
   {
     title: 'Secure Login Blog',
     description:
       'A secure PHP blog authentication project with registration, login, logout, password hashing, sessions, prepared SQL statements, input validation, and protection against common web attacks.',
-    imageSrc: projectImage,
+    imageSrc: '/images/projects/secure-login-blog.jpg',
     imageAlt: 'Placeholder preview for the Secure Login Blog project',
     techList: [
       'PHP',
@@ -92,6 +97,7 @@ const projects: ProjectCardProps[] = [
       'Password Hashing',
       'Web Security',
     ],
+    linkStatus: 'Repository unavailable',
   },
 ];
 
