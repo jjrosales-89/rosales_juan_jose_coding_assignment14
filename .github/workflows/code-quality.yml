@@ -1,11 +1,11 @@
-name: Code Quality Checks
+name: Portfolio CI Pipeline
 
 on:
   push:
   pull_request:
 
 jobs:
-  quality-checks:
+  quality-and-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,8 +27,14 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-      - name: Run tests
+      - name: Run unit tests
         run: npm run test:ci
+
+      - name: Build React production site
+        run: npm run build
 
       - name: Build production Storybook
         run: npm run build-storybook
+
+      - name: Build Docker production image
+        run: docker build -t rosales_juan_jose_coding_assignment14 .
